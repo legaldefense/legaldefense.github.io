@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
+/* dark mode via classe `.dark` no <html> (next-themes), não por prefers-color-scheme */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ----------------------------------------------------------------------------
  * Design tokens — marca Legal Defense (navy #000080 + verde #008000 + Geist).
  * Tailwind v4: o que está em @theme vira utilitário (bg-navy, text-green, ...).
  * ------------------------------------------------------------------------- */
 @theme {
   --color-ink: #0a1024;
+  --color-ink-2: #0e1530;
   --color-ink-soft: #3b425c;
   --color-muted: #6b7280;
 
   --color-navy: #000080;
   --color-navy-700: #14237a;
+  --color-navy-300: #6b78d8;
   --color-navy-50: #eef0ff;
 
   --color-green: #008000;
@@ -37,27 +42,36 @@
     text-rendering: optimizeLegibility;
   }
 
+  html.dark {
+    background: var(--color-ink);
+    color-scheme: dark;
+  }
+
   body {
     background: #ffffff;
     color: var(--color-ink);
     font-family: var(--font-sans);
   }
 
-  ::selection {
-    background: color-mix(in srgb, var(--color-green) 22%, transparent);
-    color: var(--color-ink);
+  .dark body {
+    background: var(--color-ink);
+    color: #ffffff;
   }
 
-  /* foco acessível e na marca */
+  ::selection {
+    background: color-mix(in srgb, var(--color-green) 24%, transparent);
+    color: inherit;
+  }
+
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid var(--color-green);
+    outline: 2px solid var(--color-green-bright);
     outline-offset: 2px;
     border-radius: 6px;
   }
 }
 
-/* malha sutil de fundo (hero / seções escuras) */
+/* malhas de fundo */
 .bg-grid {
   background-image: linear-gradient(
       to right,
@@ -67,7 +81,6 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
 }
-
 .bg-grid-ink {
   background-image: linear-gradient(
       to right,
@@ -77,8 +90,16 @@
     linear-gradient(to bottom, rgba(10, 16, 36, 0.045) 1px, transparent 1px);
   background-size: 56px 56px;
 }
+.dark .bg-grid-ink {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
 
-/* texto com gradiente navy -> verde */
+/* texto com gradiente navy -> verde (clareia no dark) */
 .text-gradient {
   background: linear-gradient(
     100deg,
@@ -89,6 +110,32 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+.dark .text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-navy-300) 0%,
+    #8ea0ff 40%,
+    var(--color-green-bright) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------------------------------------------------------------- animações */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 0.7, 0.2, 1) both;
 }
 
 @keyframes float-soft {
@@ -102,4 +149,33 @@
 }
 .animate-float {
   animation: float-soft 6s ease-in-out infinite;
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(3%, -4%) scale(1.08);
+  }
+  66% {
+    transform: translate(-3%, 3%) scale(0.96);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+.animate-aurora {
+  animation: aurora 16s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .animate-float,
+  .animate-aurora {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

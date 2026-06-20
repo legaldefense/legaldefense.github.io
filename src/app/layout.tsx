@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 
 import "./globals.css";
 import { site } from "@/lib/site";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const siteUrl = `https://${site.domain}`;
 
@@ -52,8 +53,21 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="antialiased">{children}</body>
+    <html
+      lang="pt-BR"
+      suppressHydrationWarning
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+    >
+      <body className="antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

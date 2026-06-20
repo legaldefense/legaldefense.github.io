@@ -108,3 +108,74 @@ export const differentiators: { title: string; description: string }[] = [
       "Evidências organizadas com rastreabilidade e isolamento total entre investigações. O sigilo do seu assistido é prioridade, não detalhe.",
   },
 ];
+
+/** Seção educativa: o que é investigação defensiva (reforça o pioneirismo). */
+export const whatIs = {
+  lead: "É a investigação conduzida pela própria defesa — para reunir, de forma lícita e documentada, os elementos que esclarecem os fatos e sustentam a tese de defesa.",
+  points: [
+    {
+      title: "Conduzida pela defesa",
+      description:
+        "O advogado investiga ativamente, com iniciativa própria, em vez de apenas reagir à acusação.",
+    },
+    {
+      title: "Lícita e documentada",
+      description:
+        "Diligências, entrevistas e perícias registradas com método, prazos e rastreabilidade.",
+    },
+    {
+      title: "A serviço da tese",
+      description:
+        "Tudo converge para o relatório de investigação que embasa a estratégia de defesa.",
+    },
+  ],
+  note: "Alinhado à prática regulamentada pela OAB — Provimento nº 188/2018 (atualizado pelo nº 213/2021).",
+};
+
+export type Audience = { title: string; description: string; icon: string };
+
+export const audience: Audience[] = [
+  {
+    title: "Advogados criminalistas",
+    description:
+      "Conduza a investigação defensiva dos seus casos com método — do primeiro indício ao relatório.",
+    icon: "scale",
+  },
+  {
+    title: "Bancas e escritórios de defesa",
+    description:
+      "Padronize procedimentos, distribua diligências e dê visibilidade à equipe num só lugar.",
+    icon: "users",
+  },
+  {
+    title: "Núcleos e assistência",
+    description:
+      "Organização e escala para lidar com grandes volumes de procedimentos sem perder o controle.",
+    icon: "shield",
+  },
+];
+
+export type Faq = { q: string; a: string };
+
+export const faq: Faq[] = [
+  {
+    q: "O que é investigação defensiva?",
+    a: "É a investigação conduzida pela defesa para reunir, de forma lícita, elementos que esclareçam os fatos e fortaleçam a tese — entrevistas, documentos, perícias e diligências. É regulamentada pela OAB (Provimento nº 188/2018).",
+  },
+  {
+    q: "Os dados e o sigilo do assistido ficam protegidos?",
+    a: "Sim. Cada investigação é isolada por escritório, com autenticação robusta e permissões por perfil. Evidências e documentos ficam organizados com rastreabilidade e zelo pela cadeia de custódia.",
+  },
+  {
+    q: "Está alinhado às regras da OAB?",
+    a: "O sistema estrutura o procedimento conforme a prática da investigação defensiva prevista no Provimento OAB nº 188/2018 (e na atualização nº 213/2021). A responsabilidade pela condução segue sendo do advogado.",
+  },
+  {
+    q: "O que preciso para começar?",
+    a: "Só criar a conta do seu escritório e convidar a equipe. Você abre o primeiro procedimento em minutos — sem instalar nada e sem migração demorada.",
+  },
+  {
+    q: "Serve para quais tipos de caso?",
+    a: "Para qualquer procedimento de investigação defensiva na esfera criminal — da fase de inquérito à instrução. Você acompanha ainda as movimentações dos processos relacionados.",
+  },
+];
