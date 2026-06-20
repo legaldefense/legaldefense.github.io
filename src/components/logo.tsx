@@ -29,7 +29,7 @@ export function Logo({
           <span
             className={`mt-0.5 text-[10px] font-medium uppercase tracking-[0.16em] ${accent}`}
           >
-            Defesa criminal
+            Investigação defensiva
           </span>
         </span>
       )}

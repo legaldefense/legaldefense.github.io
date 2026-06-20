@@ -1,4 +1,4 @@
-import { RadarIcon, FolderIcon, UsersIcon, SearchIcon } from "./icons";
+import { RadarIcon, FolderIcon, DocIcon, SearchIcon } from "./icons";
 
 /**
  * Mock estilizado do painel do app (puro CSS/SVG) — dá a sensação do produto
@@ -6,16 +6,16 @@ import { RadarIcon, FolderIcon, UsersIcon, SearchIcon } from "./icons";
  */
 export function DashboardMock() {
   const kpis = [
-    { label: "Procedimentos ativos", value: "128", trend: "+12" },
-    { label: "Prazos esta semana", value: "9", trend: "3 hoje" },
-    { label: "Clientes", value: "342", trend: "+8" },
+    { label: "Investigações ativas", value: "128", trend: "+12" },
+    { label: "Diligências pendentes", value: "9", trend: "3 hoje" },
+    { label: "Evidências", value: "342", trend: "+8" },
   ];
 
   const rows = [
-    { n: "2026.1.1/0001", cliente: "Maria Oliveira", status: "Em andamento", tone: "green" },
+    { n: "2026.1.1/0001", cliente: "Maria Oliveira", status: "Em diligência", tone: "green" },
     { n: "2026.1.1/0002", cliente: "João Pereira", status: "Concluído", tone: "navy" },
     { n: "2026.1.1/0003", cliente: "Ana Souza", status: "Arquivado", tone: "muted" },
-    { n: "2026.1.2/0014", cliente: "Carlos Lima", status: "Em andamento", tone: "green" },
+    { n: "2026.1.2/0014", cliente: "Carlos Lima", status: "Em diligência", tone: "green" },
   ];
 
   const toneClass: Record<string, string> = {
@@ -49,9 +49,9 @@ export function DashboardMock() {
           {[
             { icon: ChartGlyph, label: "Painel", active: true },
             { icon: FolderIcon, label: "Procedimentos" },
-            { icon: UsersIcon, label: "Clientes" },
+            { icon: SearchIcon, label: "Diligências" },
+            { icon: DocIcon, label: "Evidências" },
             { icon: RadarIcon, label: "Monitoramento" },
-            { icon: SearchIcon, label: "Investigação" },
           ].map(({ icon: Icon, label, active }) => (
             <div
               key={label}
@@ -105,7 +105,7 @@ export function DashboardMock() {
           <div className="mt-4 overflow-hidden rounded-xl border border-line">
             <div className="grid grid-cols-[1.2fr_1.4fr_1fr] bg-mist/70 px-3 py-2 text-[10px] font-medium uppercase tracking-wide text-muted">
               <span>Procedimento</span>
-              <span>Cliente</span>
+              <span>Assistido</span>
               <span>Status</span>
             </div>
             {rows.map((r) => (

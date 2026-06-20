@@ -123,4 +123,6 @@ export const featureIcons: Record<
   shield: ShieldIcon,
   doc: DocIcon,
   chart: ChartIcon,
+  search: SearchIcon,
+  lock: LockIcon,
 };

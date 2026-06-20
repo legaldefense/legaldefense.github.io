@@ -102,11 +102,11 @@ function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-60" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green" />
             </span>
-            Feito para escritórios de defesa criminal
+            Pioneiro no Brasil · Investigação defensiva
           </span>
 
           <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl">
-            A gestão do seu escritório,{" "}
+            A investigação defensiva,{" "}
             <span className="text-gradient">no controle</span>.
           </h1>
 
@@ -119,7 +119,7 @@ function Hero() {
               href={appSignup}
               className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green px-6 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-soft)] transition-all hover:bg-green-bright hover:shadow-[var(--shadow-card)] sm:w-auto"
             >
-              Criar conta do escritório
+              Criar minha conta
               <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
@@ -131,7 +131,7 @@ function Hero() {
           </div>
 
           <p className="mt-4 text-sm text-muted">
-            Acesso imediato · Seus dados isolados por escritório
+            Acesso imediato · Cada investigação isolada e sigilosa
           </p>
         </div>
 
@@ -149,10 +149,10 @@ function Hero() {
 
 function Stats() {
   const stats = [
-    { value: "1 painel", label: "para todo o escritório" },
-    { value: "Multi", label: "escritório, dados isolados" },
+    { value: "1º no Brasil", label: "sistema de investigação defensiva" },
+    { value: "Método", label: "do indício ao relatório" },
     { value: "Auto", label: "monitoramento de processos" },
-    { value: "100%", label: "focado em defesa criminal" },
+    { value: "Sigilo", label: "isolado por investigação" },
   ];
   return (
     <section className="border-y border-line bg-mist/60">
@@ -177,8 +177,8 @@ function Features() {
     <section id="recursos" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 sm:py-28">
       <SectionHead
         eyebrow="Recursos"
-        title="Tudo o que o escritório precisa, num lugar só"
-        subtitle="Do primeiro atendimento ao arquivamento, com cada procedimento, cliente e prazo sob controle."
+        title="Tudo o que a investigação defensiva precisa"
+        subtitle="Do primeiro indício ao relatório final, com cada diligência, evidência e prazo sob controle."
       />
 
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -222,7 +222,8 @@ function Differentiators() {
             Por que o Legal Defense
           </span>
           <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-            Não é um CRM genérico. É a sua prática, organizada.
+            Não é um software jurídico genérico. É a investigação
+            defensiva, estruturada.
           </h2>
         </div>
 
@@ -256,8 +257,8 @@ function HowItWorks() {
     <section id="como-funciona" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 sm:py-28">
       <SectionHead
         eyebrow="Como funciona"
-        title="Do zero ao escritório organizado em três passos"
-        subtitle="Sem migração interminável nem treinamento longo — a equipe começa a usar no mesmo dia."
+        title="Da abertura ao relatório, em três passos"
+        subtitle="Sem planilhas paralelas nem improviso — a investigação conduzida com método desde o primeiro dia."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -286,9 +287,9 @@ function HowItWorks() {
 
 function FinalCta() {
   const bullets = [
-    "Procedimentos, clientes e equipe num só lugar",
-    "Monitoramento automático de movimentações",
-    "Dados isolados e protegidos por escritório",
+    "Procedimentos, diligências e evidências num só lugar",
+    "Monitoramento automático dos processos",
+    "Sigilo e isolamento total por investigação",
   ];
   return (
     <section className="px-5 pb-24">
@@ -298,11 +299,11 @@ function FinalCta() {
 
         <div className="relative">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Coloque o seu escritório no controle hoje
+            Conduza sua investigação defensiva com método
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty text-lg text-white/70">
-            Crie a conta do escritório e traga a equipe. É rápido, e o seu dia a
-            dia agradece.
+            Crie a conta e comece a estruturar seus procedimentos hoje.
+            Pioneiro no Brasil, feito para a defesa.
           </p>
 
           <ul className="mx-auto mt-8 flex max-w-2xl flex-col flex-wrap items-start justify-center gap-3 text-left sm:flex-row sm:items-center sm:gap-x-6">
@@ -319,7 +320,7 @@ function FinalCta() {
               href={appSignup}
               className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-bright sm:w-auto"
             >
-              Criar conta do escritório
+              Criar minha conta
               <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
@@ -345,8 +346,8 @@ function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-              {site.tagline} Gestão de procedimentos, clientes e processos para a
-              advocacia criminal.
+              {site.tagline} Das diligências às evidências, até o relatório que
+              sustenta a defesa.
             </p>
           </div>
 
