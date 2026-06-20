@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+ * Design tokens — marca Legal Defense (navy #000080 + verde #008000 + Geist).
+ * Tailwind v4: o que está em @theme vira utilitário (bg-navy, text-green, ...).
+ * ------------------------------------------------------------------------- */
+@theme {
+  --color-ink: #0a1024;
+  --color-ink-soft: #3b425c;
+  --color-muted: #6b7280;
+
+  --color-navy: #000080;
+  --color-navy-700: #14237a;
+  --color-navy-50: #eef0ff;
+
+  --color-green: #008000;
+  --color-green-bright: #00a83c;
+  --color-green-50: #e9f7ee;
+
+  --color-mist: #f4f6f9;
+  --color-line: #e7e9ef;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --shadow-soft: 0 1px 2px rgba(10, 16, 36, 0.04),
+    0 12px 32px -12px rgba(10, 16, 36, 0.12);
+  --shadow-card: 0 1px 3px rgba(10, 16, 36, 0.06),
+    0 24px 48px -24px rgba(10, 16, 36, 0.18);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-green) 22%, transparent);
+    color: var(--color-ink);
+  }
+
+  /* foco acessível e na marca */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-green);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+/* malha sutil de fundo (hero / seções escuras) */
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-grid-ink {
+  background-image: linear-gradient(
+      to right,
+      rgba(10, 16, 36, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(10, 16, 36, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* texto com gradiente navy -> verde */
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-navy) 0%,
+    var(--color-navy-700) 38%,
+    var(--color-green) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-float {
+  animation: float-soft 6s ease-in-out infinite;
+}
