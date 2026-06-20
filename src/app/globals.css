@@ -40,6 +40,10 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* estado claro explícito: impede o UA de pintar canvas/overscroll com o
+     * escuro do SO quando o dispositivo está em dark mode e o tema é claro. */
+    color-scheme: light;
+    background: #ffffff;
   }
 
   html.dark {
