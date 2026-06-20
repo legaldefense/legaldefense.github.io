@@ -21,6 +21,7 @@ export const site = {
   description:
     "Abra procedimentos, registre diligências e evidências, acompanhe os processos e produza o relatório que sustenta a defesa — tudo num só lugar, com método e sigilo.",
   email: "contato@legaldefense.com.br",
+  cnpj: "60.646.864/0001-07",
 };
 
 export type Feature = {

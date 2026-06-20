@@ -573,8 +573,8 @@ function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 text-xs text-muted sm:flex-row dark:border-white/10 dark:text-white/40">
           <p>
-            © {new Date().getFullYear()} {site.name}. Todos os direitos
-            reservados.
+            © {new Date().getFullYear()} {site.name} · CNPJ {site.cnpj} · Todos
+            os direitos reservados.
           </p>
           <p>{site.domain}</p>
         </div>
