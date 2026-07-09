@@ -85,17 +85,11 @@ function Header() {
 
         <div className="flex items-center gap-2 sm:gap-2.5">
           <ThemeToggle />
-          <Link
-            href={appLogin}
-            className="hidden rounded-lg px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:text-navy sm:inline-block dark:text-white/70 dark:hover:text-white"
-          >
-            Entrar
-          </Link>
           <a
             href="#lista-de-espera"
-            className="group inline-flex items-center gap-1.5 rounded-lg bg-navy px-3.5 py-2 text-sm font-semibold text-white shadow-[var(--shadow-soft)] transition-all hover:bg-navy-700 dark:bg-green dark:hover:bg-green-bright"
+            className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-navy px-3.5 py-2 text-sm font-semibold text-white shadow-[var(--shadow-soft)] transition-all hover:bg-navy-700 dark:bg-green dark:hover:bg-green-bright"
           >
-            Entrar na lista
+            Entrar na lista de espera
             <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
