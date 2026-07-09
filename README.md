@@ -9,7 +9,9 @@ servida em `https://legaldefense.com.br`. As CTAs apontam para o app em
 - **Next.js 15** (App Router) com **static export** (`output: "export"` → `out/`).
 - **Tailwind CSS v4** (tokens da marca em `src/app/globals.css`).
 - **Geist** (mesma fonte do app).
-- Sem backend/SSR — site 100% estático, hospedado no **AWS Amplify**.
+- Sem backend/SSR — site 100% estático, hospedado no **GitHub Pages**.
+- **Lista de espera** (captação de leads): formulário → Google Apps Script →
+  Google Sheets. Setup em `waitlist/SETUP.md`.
 
 ## Desenvolvimento
 
@@ -33,5 +35,7 @@ npm run build    # gera ./out (estático)
 
 ## Deploy
 
-CI/CD pelo Amplify (branch `main` → build `npm run build`, artefatos em `out/`).
+CI/CD por **GitHub Actions → GitHub Pages** (`.github/workflows/deploy.yml`):
+todo push em `main` roda `npm run build` (export para `out/`) e publica. Domínio
+apex via `public/CNAME` + DNS na Route53. HTTPS provisionado pelo GitHub.
 Identidade visual: navy `#000080` + verde `#008000` + Geist.

@@ -3,10 +3,10 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { DashboardMock } from "@/components/dashboard-mock";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Waitlist } from "@/components/waitlist";
 import {
   ArrowRightIcon,
   ChevronDownIcon,
-  CheckIcon,
   featureIcons,
   LockIcon,
   ScaleIcon,
@@ -18,7 +18,6 @@ import {
 } from "@/components/icons";
 import {
   appLogin,
-  appSignup,
   audience,
   differentiators,
   faq,
@@ -33,6 +32,7 @@ const nav = [
   { href: "#recursos", label: "Recursos" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#faq", label: "FAQ" },
+  { href: "#lista-de-espera", label: "Lista de espera" },
 ];
 
 const audienceIcons: Record<string, typeof ScaleIcon> = {
@@ -54,7 +54,7 @@ export default function Home() {
         <Audience />
         <HowItWorks />
         <Faq />
-        <FinalCta />
+        <Waitlist />
       </main>
       <Footer />
     </div>
@@ -91,13 +91,13 @@ function Header() {
           >
             Entrar
           </Link>
-          <Link
-            href={appSignup}
+          <a
+            href="#lista-de-espera"
             className="group inline-flex items-center gap-1.5 rounded-lg bg-navy px-3.5 py-2 text-sm font-semibold text-white shadow-[var(--shadow-soft)] transition-all hover:bg-navy-700 dark:bg-green dark:hover:bg-green-bright"
           >
-            Começar
+            Entrar na lista
             <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          </a>
         </div>
       </div>
     </header>
@@ -146,13 +146,13 @@ function Hero() {
             className="rise mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
             style={{ animationDelay: "180ms" }}
           >
-            <Link
-              href={appSignup}
+            <a
+              href="#lista-de-espera"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green px-6 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-soft)] transition-all hover:bg-green-bright hover:shadow-[var(--shadow-card)] sm:w-auto"
             >
-              Criar minha conta
+              Entrar na lista de espera
               <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
-            </Link>
+            </a>
             <Link
               href={appLogin}
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-base font-semibold text-ink transition-colors hover:border-navy/30 hover:text-navy sm:w-auto dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-white/30"
@@ -165,7 +165,7 @@ function Hero() {
             className="rise mt-4 text-sm text-muted dark:text-white/45"
             style={{ animationDelay: "240ms" }}
           >
-            Acesso imediato · Cada investigação isolada e sigilosa
+            Vagas iniciais limitadas · Cada investigação isolada e sigilosa
           </p>
         </div>
 
@@ -444,62 +444,6 @@ function Faq() {
   );
 }
 
-/* --------------------------------------------------------------- final cta */
-
-function FinalCta() {
-  const bullets = [
-    "Procedimentos, diligências e evidências num só lugar",
-    "Monitoramento automático dos processos",
-    "Sigilo e isolamento total por investigação",
-  ];
-  return (
-    <section className="px-5 pb-24">
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-to-br from-navy via-navy-700 to-ink px-6 py-16 text-center sm:px-12">
-        <div className="pointer-events-none absolute inset-0 bg-grid opacity-50 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-        <div className="animate-aurora pointer-events-none absolute -bottom-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-green/25 blur-3xl" />
-
-        <div className="relative">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Conduza sua investigação defensiva com método
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-pretty text-lg text-white/70">
-            Crie a conta e comece a estruturar seus procedimentos hoje. Pioneiro
-            no Brasil, feito para a defesa.
-          </p>
-
-          <ul className="mx-auto mt-8 flex max-w-2xl flex-col flex-wrap items-start justify-center gap-3 text-left sm:flex-row sm:items-center sm:gap-x-6">
-            {bullets.map((b) => (
-              <li
-                key={b}
-                className="flex items-center gap-2 text-sm text-white/85"
-              >
-                <CheckIcon className="h-4 w-4 shrink-0 text-green-bright" />
-                {b}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href={appSignup}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-bright sm:w-auto"
-            >
-              Criar minha conta
-              <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              href={appLogin}
-              className="inline-flex w-full items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
-            >
-              Já tenho conta
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ----------------------------------------------------------------- footer */
 
 function Footer() {
@@ -559,12 +503,12 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <Link
-                    href={appSignup}
+                  <a
+                    href="#lista-de-espera"
                     className="text-ink-soft hover:text-navy dark:text-white/60 dark:hover:text-white"
                   >
-                    Criar conta
-                  </Link>
+                    Entrar na lista de espera
+                  </a>
                 </li>
               </ul>
             </div>
